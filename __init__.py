@@ -51,3 +51,7 @@ def decrypt_with_key(key, valeur):
         return f"Valeur décryptée avec clé personnalisée : {decrypted.decode()}"
     except Exception as e:
         return f"Erreur lors du décryptage : {str(e)}"
+
+@app.route('/generate_key')
+def generate_key():
+    return Fernet.generate_key().decode()
