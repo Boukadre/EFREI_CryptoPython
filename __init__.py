@@ -32,3 +32,22 @@ def decryptage(valeur):
         return f"Valeur décryptée : {decrypted.decode()}"  # bytes -> str
     except Exception as e:
         return f"Erreur lors du décryptage : {str(e)}"
+
+
+@app.route('/encrypt/<key>/<valeur>')
+def encrypt_with_key(key, valeur):
+    try:
+        f_user = Fernet(key.encode())  # Création d'un objet Fernet avec la clé utilisateur
+        token = f_user.encrypt(valeur.encode())  # Chiffrement
+        return f"Valeur encryptée avec clé personnalisée : {token.decode()}"
+    except Exception as e:
+        return f"Erreur lors de l'encryptage : {str(e)}"
+
+@app.route('/decrypt/<key>/<valeur>')
+def decrypt_with_key(key, valeur):
+    try:
+        f_user = Fernet(key.encode())  # Création d'un objet Fernet avec la clé utilisateur
+        decrypted = f_user.decrypt(valeur.encode())  # Déchiffrement
+        return f"Valeur décryptée avec clé personnalisée : {decrypted.decode()}"
+    except Exception as e:
+        return f"Erreur lors du décryptage : {str(e)}"
