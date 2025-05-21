@@ -1,3 +1,28 @@
-<!doctype html>
-<title>CryptoPython</title>
-<h1>Bienvue dans votre atelier CryptoPython !</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CryptoPython</title>
+</head>
+<body>
+    <h1>Bienvenue dans votre atelier CryptoPython !</h1>
+
+    <h2>📌 Étapes pour utiliser l'application :</h2>
+    <ol>
+        <li><strong>Générer une clé :</strong><br>
+            <a href="/generate_key">/generate_key</a> (copiez la clé affichée)
+        </li>
+        <li><strong>Chiffrer un message :</strong><br>
+            Accédez à : <code>/encrypt/&lt;clé&gt;/&lt;message&gt;</code><br>
+            Exemple : <br>
+            <code>/encrypt/OvKoy0rLiL6B-iWzOnn-hm04OAW823MJZbLptJRNrks=/HelloWorld</code>
+        </li>
+        <li><strong>Déchiffrer un message :</strong><br>
+            Accédez à : <code>/decrypt/&lt;clé&gt;/&lt;message_chiffré&gt;</code><br>
+            Exemple : <br>
+            <code>/decrypt/OvKoy0rLiL6B-iWzOnn-hm04OAW823MJZbLptJRNrks=/gAAAAAB...</code>
+        </li>
+    </ol>
+
+    <p>💡 Astuce : encodez l'URL si elle contient des caractères spéciaux (par exemple `/`, `=`).</p>
+</body>
+</html>
