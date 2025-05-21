@@ -22,3 +22,13 @@ def encryptage(valeur):
                                                                                                                                                      
 if __name__ == "__main__":
   app.run(debug=True)
+
+
+@app.route('/decrypt/<string:valeur>')
+def decryptage(valeur):
+    try:
+        valeur_bytes = valeur.encode()  # str -> bytes
+        decrypted = f.decrypt(valeur_bytes)  # Décryptage
+        return f"Valeur décryptée : {decrypted.decode()}"  # bytes -> str
+    except Exception as e:
+        return f"Erreur lors du décryptage : {str(e)}"
